@@ -25,6 +25,11 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import Application, CommandHandler, ContextTypes
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+TG_TOKEN = os.getenv("TG_TOKEN")
+
 # Enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -80,7 +85,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 def main() -> None:
     """Run the bot."""
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token("TOKEN").build()
+    application = Application.builder().token(TG_TOKEN).build()
 
     # Register the commands...
     application.add_handler(CommandHandler("start", start))

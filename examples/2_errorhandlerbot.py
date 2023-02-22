@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 # This can be your own ID, or one for a developer group/channel.
 # You can use the /start command of this bot to see your chat id.
-DEVELOPER_CHAT_ID = 123456789
+DEVELOPER_CHAT_ID = 228559330
 
 
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -65,7 +65,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
 
     # Finally, send the message
     await context.bot.send_message(
-        chat_id=DEVELOPER_CHAT_ID, text=message, parse_mode=ParseMode.HTML
+        chat_id=DEVELOPER_CHAT_ID, text=message, parse_mode=ParseMode.HTML,
     )
 
 
